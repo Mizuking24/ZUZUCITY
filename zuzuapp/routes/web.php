@@ -20,7 +20,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/item', 'ItemController@index')->name('user.item_index');
 Route::get('/item/{id}/show', 'ItemController@show')->name('user.item_show');
-Route::post('/cart/create', 'CartController@create')->name('user.cart_create');
+Route::post('/cart/add', 'CartController@add')->name('user.cart_add');
+Route::get('/cart/index', 'CartController@index')->name('user.cart_index');
+Route::post('/cart/{id}/destroy', 'CartController@destroy')->name('user.cart_destroy');
 
 Route::prefix('admin')->group(function () {
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');

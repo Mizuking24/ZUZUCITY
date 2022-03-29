@@ -33,15 +33,15 @@
                       @endif
                     </tr>
                   </table>
-                  {!! Form::open(['route' => ['user.cart_create', 'class' => 'd-inline']]) !!}
+                  {!! Form::open(['route' => ['user.cart_add', 'class' => 'd-inline']]) !!}
                     {{ Form::hidden('item_id', $item->id) }}
-                    {{ Form::hidden('user_id', $user->id) }}
+                    {{ Form::hidden('user_id', $user) }}
                     <div class="form-group col-sm-2">
                       <div class="ml-2">
                         {!! Form::label('amount', '購入個数', ['class' => 'mt-1']) !!}
                       </div>
                       <div class="ml-2">
-                        <input type="number" name="item_count" class="form-control" pattern="[1-9][0-9]*" min="1" required autofocus>
+                        <input type="number" name="amount" class="form-control" pattern="[1-9][0-9]*" min="1" required autofocus>
                       </div>
                     </div>
                     <div class="form-group col-sm-2">
