@@ -15,6 +15,9 @@
                     @endif
 
                     You are logged in!
+                <div>
+                    <a href="{{ route('user.item_index') }}">こちら</a>から先に進んでください。
+                </div>
                 </div>
             </div>
         </div>

@@ -15,6 +15,13 @@
                     @endif
 
                     You are logged in!
+                    <div>
+                        <a href="{{ route('admin.item_index') }}">商品一覧</a>
+                    </div>
+                    <div>
+                        <a href="{{ route('admin.item_index') }}">注文一覧</a>
+                    </div>
+                    <p>{{ $user }}</p>
                 </div>
             </div>
         </div>

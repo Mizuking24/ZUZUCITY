@@ -18,10 +18,17 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/item', 'ItemController@index')->name('user.item_index');
+Route::get('/item/{id}/show', 'ItemController@show')->name('user.item_show');
+Route::post('/cart/create', 'CartController@create')->name('user.cart_create');
 
 Route::prefix('admin')->group(function () {
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login');
     Route::post('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
     Route::get('/', 'Auth\AdminController@index')->name('admin.index');
+    Route::get('/item', 'Admin\ItemController@index')->name('admin.item_index');
+    Route::get('/item/new', 'Admin\ItemController@new')->name('admin.item_new');
+    Route::post('/item/create', 'Admin\ItemController@create')->name('admin.item_create');
+    Route::get('/item/{id}/show', 'Admin\ItemController@show')->name('admin.item_show');
 });
