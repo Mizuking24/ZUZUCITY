@@ -33,6 +33,7 @@
                       @endif
                     </tr>
                   </table>
+                  @if($item->is_active === 1)
                   {!! Form::open(['route' => ['user.cart_add', 'class' => 'd-inline']]) !!}
                     {{ Form::hidden('item_id', $item->id) }}
                     {{ Form::hidden('user_id', $user) }}
@@ -48,6 +49,7 @@
                       {!! Form::submit('カートへ', ['class' => 'btn btn-primary']) !!}
                     </div>
                   {!! Form::close() !!}
+                  @endif
                 </div>
             </div>
         </div>

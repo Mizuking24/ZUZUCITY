@@ -16,7 +16,7 @@ class CartController extends Controller
         return redirect(route('user.cart_index'));
     }
 
-    public function index() {
+    public function index(Request $request) {
         $user = Auth::user();
         if ($user->carts->first()) {
             // $cart_data = Cart::where('user_id', $user)->get();
@@ -26,6 +26,8 @@ class CartController extends Controller
                 $small_total = $cart->item->price * $cart->amount * 1.1;
                 $total += $small_total;
             }
+            $request->session()->put('cart_data', $cart_data);
+            $request->session()->put('total', $total);
             return view('cart.index', [
                 'cart_data' => $cart_data,
                 'total' => $total,

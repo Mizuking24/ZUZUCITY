@@ -34,7 +34,7 @@
                     <td>{{ $total }}円</td>
                     <td></td>
                     <td>
-                      {!! Form::open(['route' => ['user.cart_add']]) !!}
+                      {!! Form::open(['route' => ['user.order_new']]) !!}
                       {!! Form::submit('レジへ進む', ['class' => 'btn btn-primary']) !!}
                       {!! Form::close() !!}
                     </td>

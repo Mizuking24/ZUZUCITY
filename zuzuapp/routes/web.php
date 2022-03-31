@@ -23,6 +23,9 @@ Route::get('/item/{id}/show', 'ItemController@show')->name('user.item_show');
 Route::post('/cart/add', 'CartController@add')->name('user.cart_add');
 Route::get('/cart/index', 'CartController@index')->name('user.cart_index');
 Route::post('/cart/{id}/destroy', 'CartController@destroy')->name('user.cart_destroy');
+Route::post('/order/new', 'OrderController@new')->name('user.order_new');
+Route::post('/order/check', 'OrderController@check')->name('user.order_check');
+Route::post('/order/create', 'OrderController@create')->name('user.order_create');
 
 Route::prefix('admin')->group(function () {
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
